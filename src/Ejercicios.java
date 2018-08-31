@@ -18,55 +18,13 @@ public class Ejercicios {
             System.out.println("Asegurate de introducir el número entero asociado a la figura.");
         }
         switch (figura) {
-            case 1: circulo();
+            case 1: System.out.println("El area es:\t" + new Circulo().area());
             break;
-            case 2: triangulo();
+            case 2: System.out.println("El area es:\t" + new Triangulo().area());
             break;
-            case 3: cuadrado();
+            case 3: System.out.println("El area es:\t" + new Cuadrado().area());
             break;
         }
-    }
-
-    private static void circulo() {
-        double radio = 0;
-        System.out.println("Introduce el radio: ");
-        Scanner sc = new Scanner(System.in);
-        try{
-            radio = sc.nextDouble();
-        }
-        catch(Exception e){
-            System.out.println("Asegurate de introducir un número.");
-        }
-        System.out.println("El resultado es: "+Math.pow(radio,2)*Math.PI);
-    }
-
-    private static void triangulo() {
-        double base = 0;
-        double altura = 0;
-        Scanner sc = new Scanner(System.in);
-        try {
-            System.out.println("Introduce la base: ");
-            base = sc.nextDouble();
-            System.out.println("Introduce la altura: ");
-            altura = sc.nextDouble();
-        }
-        catch(Exception e){
-            System.out.println("Asegurate de introducir un número.");
-        }
-        System.out.println("El resultado es: "+(base*altura)/2);
-    }
-
-    private static void cuadrado() {
-        double lado = 0;
-        Scanner sc = new Scanner(System.in);
-        try {
-            System.out.println("Introduce el lado: ");
-            lado = sc.nextDouble();
-        }
-        catch(Exception e){
-            System.out.println("Asegurate de introducir un número.");
-        }
-        System.out.println("El resultado es: "+lado*lado);
     }
 
     public static void main(String[] args){
