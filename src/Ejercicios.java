@@ -1,8 +1,8 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Ejercicios {
 
-    private static void area() {
+    public static void area() {
         int figura=0;
 
         System.out.println("Introduce la figura:\n" +
@@ -27,7 +27,21 @@ public class Ejercicios {
         }
     }
 
+    public static void iterator(){
+       LinkedList<Integer> list = new LinkedList<Integer>();
+       for(int i=0; i<3; i++) list.add(i+1);
+       ListIterator<Integer> iterator = list.listIterator(0);
+       while(iterator.hasNext()){
+           System.out.println(iterator.next());
+       }
+       while(iterator.hasPrevious()){
+           System.out.println(iterator.previous());
+       }
+
+    }
+
     public static void main(String[] args){
-        area();
+        //area();
+        iterator();
     }
 }
