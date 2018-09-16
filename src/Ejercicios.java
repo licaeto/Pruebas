@@ -40,8 +40,94 @@ public class Ejercicios {
 
     }
 
+    public static void loop(int m) {
+    	int i = 0; 
+    	int n = m;
+    	for(i=0; i<n; i++) n--;	
+    	System.out.println(i);
+    }
+    
+    public static int raiz(int n) {
+    	int m=0;
+    	while(m*m < n) m++;
+    	return m;
+    }
+    
+    public static void division(int a, int b) {
+    	int c=0;
+    	int r=0;
+    	int x=a;
+    	
+    	while(x > 0) {
+    		x=x-b;
+    		c++;
+    	}
+    	
+    	r=a-b*c;
+    	System.out.println("[Cociente: "+c+", Resto: "+r+"]");
+    }
+    
+    public static int potencia(int a, int n) {
+    	int res=1;
+    	for(int i=n; i>0; i--)
+    		res=res*a;	
+    	return res;	
+    }
+    
+    public static int resta(int x, int y) {
+    	int res=x;
+    	for(int i=y; i>0; i--) {
+    		res--;
+    	}
+    	return res;
+    }
+    
+    public static void spell(String s) {
+    	int n = s.length();
+    	for(int i=0; i<n; i++) System.out.println(s.charAt(i));
+    }
+    
+    public static String naturales(int n) {
+    	String res = "";
+    	if(n == 1) {
+    		res = "1";
+    	}
+    	else {
+    		res = naturales(n-1)+", "+n;
+    	}
+    	return res;
+   
+    }
+    
+    public static String naturalesDesc(int n) {
+    	String res="";
+    	if(n==1) res="1";
+    	else res = n+", "+naturalesDesc(n-1);
+    	return res;
+    }
+    
+    public static int divisionEnt(int a, int b) {
+    	int res;
+    	if(a < b) res = 0;
+    	else res = divisionEnt(a-b,b)+1;
+    	return res;
+    }
+    
+    public static int producto(int a, int b) {
+    	int res;
+    	if(b==0) res=0;
+    	else res=producto(a,b-1)+a;
+    	return res;
+    }
+    
+    public static int sumaDig(int n) {
+    	int res;
+    	if(n/10==0) res=n;
+    	else res=sumaDig(n/10)+n%10;
+    	return res;
+    }
+    
     public static void main(String[] args){
-        //area();
-        iterator();
+        System.out.println(sumaDig(123));
     }
 }
