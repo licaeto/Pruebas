@@ -127,7 +127,18 @@ public class Ejercicios {
     	return res;
     }
     
+    public static boolean esPrefijo(String s1, String s2) {
+    	if(s1.length()==0) return false;
+    	else return s1.equals(s2) || esPrefijo(s1.substring(0, s1.length()-1),s2);
+    }
+    
+    public static boolean esSubcadena(String s1, String s2) {
+    	int n = s2.length();
+    	if(s1.length() < s2.length()) return false;
+    	else return s1.substring(0, n).equals(s2) || esSubcadena(s1.substring(1,s1.length()),s2);
+    }
+    
     public static void main(String[] args){
-        System.out.println(sumaDig(123));
+        System.out.println(esSubcadena("hola","ol"));
     }
 }
