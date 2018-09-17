@@ -1,17 +1,28 @@
 import java.util.Scanner;
 
 public class Cuadrado extends Figura{
-    @Override
-    double area() {
-        double lado = 0;
-        Scanner sc = new Scanner(System.in);
-        try {
-            System.out.println("Introduce el lado: ");
-            lado = sc.nextDouble();
-        }
-        catch(Exception e){
-            System.out.println("Asegurate de introducir un número.");
-        }
+	protected double lado;
+	
+    public Cuadrado(double lado) {
+		super();
+		this.lado = lado;
+	}
+
+	public double getLado() {
+		return lado;
+	}
+
+	public void setLado(double lado) {
+		this.lado = lado;
+	}
+	
+	@Override
+    public double area() {
         return lado*lado;
     }
+	
+	@Override
+	public double perimetro() {
+		return 4*lado;
+	}
 }

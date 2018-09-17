@@ -4,7 +4,8 @@ public class Ejercicios {
 
     public static void area() {
         int figura=0;
-
+        int triangulo=0;
+        
         System.out.println("Introduce la figura:\n" +
                 "Circulo:\t1\n" +
                 "Triangulo:\t2\n" +
@@ -15,16 +16,46 @@ public class Ejercicios {
             figura = sc.nextInt();
         }
         catch(Exception e){
-            System.out.println("Asegurate de introducir el número entero asociado a la figura.");
+            System.out.println("Asegurate de introducir el numero entero asociado a la figura.");
         }
         switch (figura) {
-            case 1: System.out.println("El area es:\t" + new Circulo().area());
-            break;
-            case 2: System.out.println("El area es:\t" + new Triangulo().area());
-            break;
-            case 3: System.out.println("El area es:\t" + new Cuadrado().area());
-            break;
+            case 1: 
+            	System.out.print("Introduce el radio: ");        	
+            	System.out.print("El area es:\t" + new Circulo(sc.nextDouble()).area());
+            	break;
+            case 2: 
+            	System.out.print("Elige el tipo de triangulo:\n"
+            			+ "Equilatero:\t1\n"
+            			+ "Isosceles:\t2\n"
+            			+ "Escaleno:\t3\n");
+            	try{
+                    triangulo = sc.nextInt();
+                }
+                catch(Exception e){
+                    System.out.println("Asegurate de introducir el numero entero asociado al triangulo.");
+                }
+            	switch(triangulo) {
+            		case 1:
+            			System.out.print("Introduce el lado: ");
+            			System.out.print("El area es:\t" + new Equilatero(sc.nextDouble()).area());
+            			break;
+            		case 2:
+            			System.out.println("Introduce la base y el lado: ");
+            			System.out.print("El area es:\t" + new Isosceles(sc.nextDouble(),sc.nextDouble()).area());
+            			break;
+            		case 3:
+            			System.out.println("Introduce la base, el lado y la hipotenusa: ");
+            			System.out.print("El area es:\t" + new Escaleno(sc.nextDouble(),sc.nextDouble(),sc.nextDouble()).area());
+            			break;
+            	}
+            	
+            	break;
+            case 3: 
+            	System.out.print("Introduce el lado: ");
+            	System.out.print("El area es:\t" + new Cuadrado(sc.nextDouble()).area());
+            	break;
         }
+        sc.close();
     }
 
     public static void iterator(){
@@ -139,6 +170,6 @@ public class Ejercicios {
     }
     
     public static void main(String[] args){
-        System.out.println(esSubcadena("hola","ol"));
+        area();
     }
 }

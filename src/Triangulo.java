@@ -1,20 +1,35 @@
 import java.util.Scanner;
 
-public class Triangulo extends Figura {
-    @Override
-    double area() {
-        double base = 0;
-        double altura = 0;
-        Scanner sc = new Scanner(System.in);
-        try {
-            System.out.println("Introduce la base: ");
-            base = sc.nextDouble();
-            System.out.println("Introduce la altura: ");
-            altura = sc.nextDouble();
-        }
-        catch(Exception e){
-            System.out.println("Asegurate de introducir un número.");
-        }
+public abstract class Triangulo extends Figura {
+	protected double base, altura;
+	
+    public Triangulo(double base, double altura) {
+		super();
+		this.base = base;
+		this.altura = altura;
+	}
+
+	public double getBase() {
+		return base;
+	}
+
+	public void setBase(double base) {
+		this.base = base;
+	}
+
+	public double getAltura() {
+		return altura;
+	}
+
+	public void setAltura(double altura) {
+		this.altura = altura;
+	}
+
+	@Override
+    public double area() {
         return (base*altura)/2;
     }
+	
+	@Override
+	public abstract double perimetro();
 }

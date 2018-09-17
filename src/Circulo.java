@@ -3,17 +3,27 @@ import java.util.Scanner;
 import static java.lang.Math.*;
 
 public class Circulo extends Figura {
-    @Override
-    double area() {
-        double radio = 0;
-        System.out.println("Introduce el radio: ");
-        Scanner sc = new Scanner(System.in);
-        try{
-            radio = sc.nextDouble();
-        }
-        catch(Exception e){
-            System.out.println("Asegurate de introducir un número.");
-        }
+	protected double radio;
+
+	public Circulo(double radio) {
+		this.radio = radio;
+	}
+
+	public double getRadio() {
+		return radio;
+	}
+
+	public void setRadio(double radio) {
+		this.radio = radio;
+	}
+
+	@Override
+	public double area() {
         return Math.pow(radio,2)*Math.PI;
     }
+	
+	@Override
+	public double perimetro() {
+		return 2*Math.PI*radio;
+	}
 }

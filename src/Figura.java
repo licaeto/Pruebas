@@ -1,3 +1,4 @@
 public abstract class Figura {
-    abstract double area();
+    public abstract double area();
+    public abstract double perimetro();
 }
